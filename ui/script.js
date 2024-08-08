@@ -63,7 +63,7 @@ function generate(ng) {
             var itemListRandom = Math.floor(Math.random() * itemList[level].length);
 			goRoll(itemList[level][itemListRandom].name, itemList[level][itemListRandom].img, level, itemList[level][itemListRandom].itemid);
             // console.log(itemList[level][itemListRandom].itemid, level)
-            // $.post('http://denizwp-karambitcase/caseResult', JSON.stringify({
+            // $.post('http://agac-karambitcase/caseResult', JSON.stringify({
             //     item: itemList[level][itemListRandom].itemid
             // })
             // );
@@ -84,7 +84,7 @@ function goRoll(skin, skinimg, skinlvl, itemid) {
 		$('#rolled').html(skin);
         $('.raffle-roller-holder').fadeOut();
         $('body').fadeOut();
-        $.post('http://denizwp-karambitcase/caseResult', JSON.stringify({
+        $.post('http://agac-karambitcase/caseResult', JSON.stringify({
             itemid: itemid,
             itemname: skin
         })
@@ -99,7 +99,7 @@ function goRoll(skin, skinimg, skinlvl, itemid) {
 document.onkeydown = function(data){
     if (data.which == 27){
         $('body').fadeOut();
-        $.post('http://denizwp-karambitcase/CloseUIForce', JSON.stringify({}));
+        $.post('http://agac-karambitcase/CloseUIForce', JSON.stringify({}));
         setTimeout(function(){
             location.reload();
         }, 400)
